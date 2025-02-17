@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "networksclient",
+  "version": "${version}",
+  "name": "Networks Client",
+  "description": "An optional client for the Paper Plugin Networks, adding some QoL features",
+  "authors": [
+    {
+      "name": "Kwantux",
+      "contact": {
+        "homepage": "https://kwantux.de",
+        "email": "kwantux@kwantux.de"
+      }
+    }
+  ],
+  "contact": {
+    "homepage": "https://networks.kwantux.de",
+    "sources": "https://github.com/kwantux/networksclient",
+    "issues": "https://github.com/kwantux/networksclient/issues"
+  },
+  "license": "Apache-2.0",
+  "icon": "assets/networksclient/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "de.kwantux.networksclient.client.NetworksClient"
+    ],
+    "main": [
+      "de.kwantux.networksclient.NetworksClientCommon"
+    ]
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.modrinth": "https://modrinth.com/project/networksclient"
+      }
+    }
+  },
+  "mixins": [
+    "networksclient.mixins.json",
+    {
+      "config": "networksclient.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
